@@ -1,0 +1,70 @@
+\documentclass[msc,numbers]{coppe}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{indentfirst}
+\usepackage{rotating}
+
+
+\definecolor{lightgray}{rgb}{0.9,0.9,0.9}
+
+\makelosymbols
+\makeloabbreviations
+
+\begin{document}
+  \title{Identificação de Eventos Baseada na Combinação de Detectores de Altas
+  Energias com Diferentes Tecnologias e Segmentações}
+  \foreigntitle{Event Identification Based on the Combination of High Energy
+  Detectors with Different Technologies and Segmentations}
+  \author{Fernando Guimarães}{Ferreira}
+  \advisor{Prof.}{José Manoel de}{Seixas}{D.Sc.}
+
+  \examiner{Prof.}{José Manoel de Seixas}{D.Sc.}
+  \examiner{Prof.}{Mariane Rembold Petraglia}{Ph.D.}
+  \examiner{Prof.}{Amauri Oliveira}{D.Sc.}
+  \examiner{Prof.}{André Massafferri Rodrigues}{Ph.D.}
+  \department{PEE}
+  \date{12}{2012}
+
+  \keyword{Detecção de Partículas}
+  \keyword{Física de altas energias}
+  \keyword{Redes Neurais}
+
+  \maketitle
+
+  \frontmatter
+  \include{dedic}
+  \include{thanks}
+  \include{resumo}
+  \include{abstract}
+  \tableofcontents
+  \listoffigures
+  \listoftables
+  \printlosymbols
+  \printloabbreviations
+
+  \mainmatter
+  \begin{spacing}{1.5}
+  \include{introducao}
+  \include{cern}
+  \include{trigger}
+  \include{resultados}
+  \include{conclusao}
+  \end{spacing}
+
+
+
+  \backmatter
+  \bibliographystyle{coppe-unsrt}
+  \bibliography{thesis}
+
+ % \appendix
+ % \include{appenA}
+\end{document}

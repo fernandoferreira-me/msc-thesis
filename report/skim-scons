@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# the first argument should be the pdf file
+file="$1"
+[ "${file:0:1}" == "/" ] || file="${PWD}/${file}"
+
+# run scons, and open or reload the pdf  in Skim
+scons && /usr/bin/osascript \
+  -e "set theFile to POSIX file \"${file}\" as alias" \
+  -e "set thePath to POSIX path of theFile" \
+  -e "tell application \"Skim\"" \
+  -e "  activate" \
+  -e "  set theDocs to get documents whose path is thePath" \
+  -e "  try" \
+  -e "    if (count of theDocs) > 0 then revert theDocs" \
+  -e "  end try" \
+  -e "  open theFile" \
+  -e "end tell"

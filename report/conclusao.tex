@@ -1,0 +1,82 @@
+\chapter{Conclusões}
+
+A identificação de múons de todos os patamares energéticos é crucial para
+explorar todo potencial físico disponível através da operação do ATLAS. A partir
+da observação destas partículas é possível conhecer novas físicas.
+
+O Espectrômetro de Múons é instalado na área externa do ATLAS e foi projetado
+para detectar essas partículas. A estratégia deste sistema é aplicar um
+campo magnético intenso, capaz de curvar a trajetória da partícula. Ao detectar
+a passagem do alvo por suas três estações, o aparelho consegue traçar
+um esboço do caminho percorrido e, como consequência, estimar o momento
+transverso da partícula.
+
+Contudo, há regiões onde não há cobertura de câmaras nas três camadas. Nestas
+áreas todos os múons são classificados automaticamente como pouco energéticos,
+prejudicando a eficiência de detecção.
+
+Esta dissertação procurou recuperar os múons de momento elevado utilizando
+informações geométricas do calorímetro e do sistema de múons, somadas a energia
+depositada pela passagem de partículas na célula D. Esta célula localiza-se na
+camada externa do TileCal e possui, portanto, baixa atividade hadrônica. Deste
+modo, suas informações podem ser utilizadas para ajudar na detecção de múons.
+Este trabalho é o desdobramento de~\cite{CIODARO2012}, que forneceu o estudo e
+propôs um sistema capaz de melhorar a detecção de múons utilizando informações
+de calorimetria. Este trabalho também apresentou uma metodologia para avaliar a
+resposta do RPC à radiação de fundo da caverna do ATLAS.
+
+Durante o desenvolvimento deste projeto, foram realizadas diversas reuniões com
+a colaboração, o que possibilitou o melhor entendimento em relação ao sistema de
+filtragem do L1, à seleção de múons e ao sistema de calorimetria. Também foram
+disponibilizados dados de colisão ocorridos em 2011, o que viabilizou a
+execução.
+
+O Capítulo 4 apresentou inicialmente a metodologia utilizada durante o projeto.
+Três abordagens foram realizadas:  estudo da deposição de energia de uma
+partícula passante na célula D do TileCal; utilização da geometria do detector
+ATLAS como fator classificatório e; projeto de discriminadores neurais
+utilizando os parâmetros disponíveis no L1, confirmados pela reconstrução
+\emph{offline} de múons.
+
+Através dos resultados pode-se observar que o depósito de energia na célula é
+muito semelhante para todas as distribuições estudadas. A alta taxa de falso
+alarme inviabiliza a utilização técnica de corte por patamar de energia sozinha.
+Quando utilizou-se das informações de geometria do calorímetro logicamente
+casadas à posição das regiões de interesse do RPC, obteve-se um pequeno ganho na
+detecção, aliado com a redução da taxa de falso alarme.
+
+A utilização de classificadores neurais mitigou a taxa de falso alarme para
+patamares condizentes com os requisitos de operação do L1. A taxa de detecção
+obtida em ambos os conjuntos estudados indica que a célula D pode vir a ser uma
+possível substituta da camada ausente do RPC. A Tabela~\ref{summary}
+resume todos os resultados apresentados no Capítulo~5. 
+
+\begin{table}[hptp!]\footnotesize
+  \centering
+  \tabcolsep=0.08cm
+  \begin{tabular}{ r c c c c c c }
+       \multicolumn{1}{c}{} & \multicolumn{3}{c}{Detecção MU10}& \multicolumn{3}{c}{Detecção Múons Verdadeiros} \\
+        \cmidrule(r){2-4}
+        \cmidrule(r){5-7}
+      & Dep. Energia & Geometria & Rede Neural & Dep. Energia & Geometria & Rede Neural \\
+      \midrule
+      Prob. Detecção & 60,3\% & 70,3\% & 75,6\% & 61,9\%  & 62,2\% & 82,3\% \\[1.5ex]
+      Falso Alarme   & 50,7\% & 53,6\% & 15,4\% & 62,1\%  & 57,8\% & 21,2\% \\[1.5ex]
+      Indice SP      & 0,55   & 0,58   & 0,80 & 0,49    & 0,51   & 0.82   \\
+      \bottomrule
+  \end{tabular}
+  \caption{Tabela resumindo os resultados obtidos neste trabalho.}
+  \label{summary}
+\end{table}
+
+
+
+À luz do \emph{upgrade} do detector, previsto para a operação em 2020, com
+etapas intermediárias em 2013 e 2017, novas arquiteturas podem ser propostas. O
+projeto e implantação de uma placa eletrônica que implemente as redes neurais
+propostas nesse estudo no L1 é um dos desdobramentos possíveis. Antes, porém,
+seria interessante um estudo mais detalhado da resposta do sistema proposto
+frente à radição de fundo do ATLAS.  Outra questão levantada durante a
+elaboração deste projeto é a possibilidade da célula D do TileCal contribuir
+para a identificação do \emph{bunch-crossing} no L1 para o MDT.
+

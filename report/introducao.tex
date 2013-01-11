@@ -1,0 +1,140 @@
+\chapter{Introdução}
+
+A evolução e o desenvolvimento de técnicas de processamento de sinais e
+inteligência computacional impulsionam diversas áreas do conhecimento. Pode-se
+observar uma infinidade de aplicações nos mais diversos segmentos. Tais
+ferramentas tendem a se tornar ainda mais poderosas quando utilizadas juntas.
+Esta multidisciplinaridade característica, somada às inúmeras possibilidades de
+abordagem de um problema, tornam a pesquisa nessas áreas instigante.
+
+Este trabalho de pesquisa acontece no âmbito da detecção de sinais em ambientes
+com baixa relação sinal-ruído. Experimentos dessa natureza apresentam um grande
+volume de informações e elevadas dimensões em seu espaço amostral, dificultando
+o processo de análise. A taxa de eventos tende a ser muito
+elevada, pelo caráter raro dos sinais de interesse. Desta maneira, torna-se
+fundamental a realização de uma filtragem \emph{online}, onde informações
+relevantes são extraídas do ruído de fundo com velocidade condizente a taxa de
+dados gerados.
+
+Dependendo da aplicação, a aquisição de dados pode envolver detectores com
+diferentes segmentações, contando com diversos sensores e canais, muitas vezes
+distintos entre si.  Como consequência, são necessários sistemas robustos com
+baixo custo computacional para contornar todas as condições hostis do projeto
+especificado.
+
+\section{Motivação}
+
+A física experimental de altas energias é um dos ramos da ciência onde as
+técnicas de processamento de sinais e inteligência computacional são mais
+exigidas. Nela, procura-se comprovar experimentalmente teorias propostas pela
+física teórica. Para tal, são construídos aparatos de proporções imensas,
+capazes de criar as condições ideais para a obtenção da física de interesse.
+
+O LHC, instalado no CERN, é um acelerador capaz de atingir níveis de energia
+nunca antes alcançados. O ATLAS, o maior dos detectores do acelerador, possui
+milhões de canais de leitura, distribuídos por diferentes subsistemas,
+utilizados para identificar partículas geradas com as colisões ocorridas durante
+a operação.
+
+Partindo do ponto de colisão em direção a área externa do ATLAS, encontram-se o
+Detector de traços, utilizado para a identificação da trajetória de determinadas
+partículas; o Calorímetro Eletromagnético e o Calorímetro Hadrônico, para a
+análise da deposição energética de partículas eletromagnéticas e hadrônicas,
+respectivamente; e o Espectrômetro (ou Detector) de Múons, para a identificação
+e determinação da trajetória de múons.
+
+No ATLAS, ocorrem quarenta milhões de eventos por segundo, onde apenas duzentos
+serão selecionados e armazenados para uma posterior análise \emph{offline}.
+Deste modo, um sistema \emph{online} de filtragem é indispensável. Esta
+seleção ocorre em 3 etapas através de níveis sequenciais:
+
+\begin{enumerate}
+
+    \item O primeiro nível do sistema de filtragem recebe todos os eventos
+    gerados nas colisões. Neste ponto, apenas um em aproximadamente quinhentos e
+    quarenta eventos é aceito.  A seleção é realizada através de \emph{hardware}
+    de baixa granularidade utilizando informações de baixa resolução do sistema
+    de calorimetria e do detector de múons, o que garante a velocidade de
+    processamento necessária.
+
+    Este nível também é responsável por gerar as chamadas Regiões de Interesse,
+    áreas onde há informação relevante. Estas regiões são propagadas para o
+    segundo nível;
+
+    \item O segundo nível de filtragem considera apenas as regiões de interesse
+    selecionadas na etapa anterior. Para tal, os algoritmos de filtragem têm
+    acesso a resolução máxima do detector, bem como a trajetória percorrida
+    pelas partículas.
+
+    \item O terceiro nível de filtragem, conhecido como \emph{Event Filter},
+    utiliza toda a informação adquirida para um evento. Ele é capaz de combinar
+    as diferentes regiões de interesse para reconstruir os processos físicos
+    ocorridos após a colisão.
+\end{enumerate}
+
+Com o advento do \emph{upgrade} do detector, previsto para a operação em 2020,
+com etapas intermediárias em 2013 e 2017, novas arquiteturas podem ser propostas
+e testadas~\cite{TSENG2008}.
+
+\section{Objetivo}
+
+Este trabalho de pesquisa utiliza técnicas de processamento de sinais e
+inteligência computacional para auxiliar o primeiro nível de filtragem na
+identificação de múons com alto valor de momento transverso.
+
+Múons são partículas estáveis, eletricamente carregadas, duzentas vezes mais
+pesadas do que os elétrons. Sua  identificação é crucial para explorar todo
+potencial físico disponível através da operação do ATLAS. São de interesse do
+experimento, múons de todos os patamares energéticos, desde poucos GeV até
+elevados valores, onde é possível a identificação de novas
+físicas~\cite{HASSANI2007}.
+
+O Espectrômetro de Múons é instalado na área externa do ATLAS e foi projetado
+para detectar e traçar a trajetória de partículas que transpassam pelos sistemas
+de calorimetria.
+
+Por ser muito pesado, o múon pouco dissipa energia ao cruzar o campo elétrico de
+átomos que estejam ao longo de seu caminho. A estratégia do sistema de múons é
+aplicar um campo magnético intenso, capaz de curvar a trajetória da partícula.
+O múon atravessará três camadas (compostas por câmaras resistivas)  ao longo de
+seu percurso. 
+
+A posição em que a partícula cruza cada uma destas camadas determina a curvatura
+de sua trajetória, que por sua vez é utilizada na determinação do valor do
+momento linear. Quanto maior a energia cinética da partícula mais suave será o
+seu raio de curvatura. Desta forma, entende-se que múons mais energéticos
+obrigatoriamente atravessam as três camadas (ou estações de coincidência) do
+espectrômetro, enquanto as menores podem passar apenas por duas, devido ao
+desvio proporcionando pelo campo magnético aplicado. Este é, portanto, um
+critério para distinção entre múons de alto momento e de baixo momento.
+
+Contudo, há regiões onde não há cobertura de câmaras nas três camadas. Nestas
+áreas todos os múons são classificados automaticamente como pouco energéticos,
+prejudicando a eficiência de detecção~\cite{ATLAS-CONF-2012-099}.
+
+O Calorímetro de Telhas, por sua vez, é segmentado radialmente em três camadas.
+Nelas, partículas hadrônicas, tais como prótons, são absorvidas. Contudo, em
+virtude da espessura deste detector, a terceira camada possui baixa atividade de
+interações com estas partículas, pois a maioria já foi absorvida nas duas
+camadas mais internas. É nesta região que se localizam as chamadas células D.
+Entende-se que as informações adquiridas nestas células  possam ser utilizadas
+para mitigar o ruído de fundo na aquisição de múons.
+
+Este trabalho utilizou as informações geométricas do calorímetro e do sistema de
+múons, somadas a energia depositada pela passagem de partículas na célula D para
+recuperar múons de momento elevado que não tiveram sua passagem registrada nas
+três estações de coincidência.
+
+\section{Organização do documento}
+
+O próximo capítulo apresenta uma visão geral do ambiente do CERN, do experimento
+ATLAS e seus sub-detectores.  O capítulo apresenta mais detalhadamente o
+Calorímetro de Telhas e o Espectrômetro de Múons, pois a presente pesquisa foi
+desenvolvida no âmbito dos dois aparelhos.  O Capítulo 3 apresenta o sistema de
+seleção de partículas do ATLAS. O nível 1 de filtragem, que utiliza informações
+da calorimetria e do sistema de múons em seus algoritmos, é explicado em
+detalhes. O Capítulo 4 mostra a base de dados utilizada para realizar as
+análises e as diferentes abordagens adotadas. O Capítulo~5  é dedicado para a
+apresentação e discussão dos resultados obtidos.   Por fim, as conclusões, bem
+como os possíveis desdobramentos deste trabalho de pesquisa, são apresentados no
+Capítulo~6.

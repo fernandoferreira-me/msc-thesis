@@ -1,0 +1,31 @@
+\begin{pspicture}(7,4)
+    \rput[l](0,3){\rnode{v1}{$i_1$}}
+    \rput[l](0,2){\rnode{v2}{$i_2$}}
+    \rput[l](0,.5){\rnode{vn}{$i_n$}}
+    \cnode(1.5,3){12pt}{C11}
+    \cnode(1.5,2){12pt}{C12}
+    \rput(1.5,1.4){\vdots}
+    \cnode(1.5,0.5){12pt}{C1N}
+    \cnode(3,1.1){12pt}{C21}
+    \cnode(3,2.5){12pt}{C22}
+    \cnode(4.5,1.1){12pt}{C32}
+    \cnode(4.5,2.5){12pt}{C31}
+    \rput[l](5.5,2.5){\rnode{s1}{$-1$ ou $1$}}
+    \ncline[nodesep=3pt]{->}{v1}{C11}
+    \ncline[nodesep=3pt]{->}{v2}{C12}
+    \ncline[nodesep=3pt]{->}{vn}{C1N}
+    \ncline[nodesep=3pt]{->}{C11}{C21}
+    \ncline[nodesep=3pt]{->}{C12}{C21}
+    \ncline[nodesep=3pt]{->}{C1N}{C21}
+    \ncline[nodesep=3pt]{->}{C11}{C22}
+    \ncline[nodesep=3pt]{->}{C12}{C22}
+    \ncline[nodesep=3pt]{->}{C1N}{C22}
+    \ncline[nodesep=3pt]{->}{C21}{C31}
+    \ncline[nodesep=3pt]{->}{C21}{C32}
+    \ncline[nodesep=3pt]{->}{C22}{C31}
+    \ncline[nodesep=3pt]{->}{C22}{C32}
+    \ncline[nodesep=3pt]{->}{C31}{s1}
+    \ncline[nodesep=3pt]{->}{C32}{s1}
+\end{pspicture}
+\caption{Diagrama representando a rede neural utilizada.}
+
