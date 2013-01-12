@@ -4,16 +4,14 @@ A identificação de múons de todos os patamares energéticos é crucial para
 explorar todo potencial físico disponível através da operação do ATLAS. A partir
 da observação destas partículas é possível conhecer novas físicas.
 
-O Espectrômetro de Múons é instalado na área externa do ATLAS e foi projetado
-para detectar essas partículas. A estratégia deste sistema é aplicar um
-campo magnético intenso, capaz de curvar a trajetória da partícula. Ao detectar
-a passagem do alvo por suas três estações, o aparelho consegue traçar
-um esboço do caminho percorrido e, como consequência, estimar o momento
-transverso da partícula.
-
-Contudo, há regiões onde não há cobertura de câmaras nas três camadas. Nestas
-áreas todos os múons são classificados automaticamente como pouco energéticos,
-prejudicando a eficiência de detecção.
+O Espectrômetro de Múons é instalado na camada externa do ATLAS e foi projetado
+para detectar essas partículas. A estratégia deste sistema é aplicar um campo
+magnético intenso, capaz de curvar a trajetória da partícula. Ao detectar a
+passagem do alvo por suas três estações, o experimento consegue traçar o
+caminho percorrido e, como consequência, estimar o momento transverso da
+partícula. Contudo, há regiões onde não há cobertura de câmaras nas três
+camadas. Nestas áreas todos os múons são classificados automaticamente como
+pouco energéticos, prejudicando a eficiência de detecção.
 
 Esta dissertação procurou recuperar os múons de momento elevado utilizando
 informações geométricas do calorímetro e do sistema de múons, somadas a energia
@@ -34,14 +32,14 @@ execução.
 O Capítulo 4 apresentou inicialmente a metodologia utilizada durante o projeto.
 Três abordagens foram realizadas:  estudo da deposição de energia de uma
 partícula passante na célula D do TileCal; utilização da geometria do detector
-ATLAS como fator classificatório e; projeto de discriminadores neurais
+ATLAS como fator classificatório; projeto de discriminadores neurais
 utilizando os parâmetros disponíveis no L1, confirmados pela reconstrução
 \emph{offline} de múons.
 
 Através dos resultados pode-se observar que o depósito de energia na célula é
 muito semelhante para todas as distribuições estudadas. A alta taxa de falso
 alarme inviabiliza a utilização técnica de corte por patamar de energia sozinha.
-Quando utilizou-se das informações de geometria do calorímetro logicamente
+Quando utilizou-se as informações de geometria do calorímetro logicamente
 casadas à posição das regiões de interesse do RPC, obteve-se um pequeno ganho na
 detecção, aliado com a redução da taxa de falso alarme.
 
@@ -49,7 +47,7 @@ A utilização de classificadores neurais mitigou a taxa de falso alarme para
 patamares condizentes com os requisitos de operação do L1. A taxa de detecção
 obtida em ambos os conjuntos estudados indica que a célula D pode vir a ser uma
 possível substituta da camada ausente do RPC. A Tabela~\ref{summary}
-resume todos os resultados apresentados no Capítulo~5. 
+resume todos os resultados apresentados no Capítulo~5.
 
 \begin{table}[hptp!]\footnotesize
   \centering
@@ -76,7 +74,4 @@ etapas intermediárias em 2013 e 2017, novas arquiteturas podem ser propostas. O
 projeto e implantação de uma placa eletrônica que implemente as redes neurais
 propostas nesse estudo no L1 é um dos desdobramentos possíveis. Antes, porém,
 seria interessante um estudo mais detalhado da resposta do sistema proposto
-frente à radição de fundo do ATLAS.  Outra questão levantada durante a
-elaboração deste projeto é a possibilidade da célula D do TileCal contribuir
-para a identificação do \emph{bunch-crossing} no L1 para o MDT.
-
+frente à radiação de fundo do ATLAS.
