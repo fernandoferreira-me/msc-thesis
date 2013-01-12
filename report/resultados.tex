@@ -1,4 +1,4 @@
-\chapter{Identificação de partículas}
+\chapter{Identificação de múons}
 
 Este capítulo descreve a elaboração de um modelo capaz de discriminar partículas
 de múons com momento transverso elevado. O intuito é recuperar aquelas que
@@ -40,7 +40,7 @@ Algumas considerações são importantes sobre a natureza dos dados utilizados:
     entre as células D e as RoI do RPC, e também a curvatura em $\eta$ na
     trajetória do múon, o mapeamento entre célula D e RoI torna-se complexo. Uma
     simplificação possível é mapear cada célula D em um setor de \emph{trigger}
-    do RPC. Esse mapeamento é robusto à varição de pseudo-rapidez, já que
+    do RPC. Esse mapeamento é robusto à variação de pseudo-rapidez, já que
     somente a posição da célula em $\phi$ é levado em consideração.
 
 \end{itemize}
@@ -65,7 +65,7 @@ ponto de corte (por exemplo, 6~GeV para MU6) e final da calda antes do corte do
 patamar seguinte. A única exceção é exatamente os eventos marcados como MU10,
 cuja distribuição se prolonga até valores bastante elevados. Esse fato pode ser
 explicado pelas áreas descobertas pelo terceiro plano RPC, por falhas no sistema
-de alimentação do MS ou mesmo por múons, que mesmo com momento transverso
+de alimentação do MS ou mesmo por múons que, mesmo com momento transverso
 elevado, não conseguiram vencer o campo magnético toroidal.
 
 Esse trabalho visa recuperar esses múons que foram classificados de maneira
@@ -77,11 +77,11 @@ distintos com bases próprias:
     realmente limitadas pelo patamar inferior de 10~GeV. Para esta análise, foram
     utilizados dados do \emph{run} 191715. São eventos datados de outubro de 2011. A
     configuração do detector previa a aquisição de múons independentes (eventos do
-    tipo \emph{single muon} ou simplesmente \emph{sglmuon}). Eventos cujo $p_T >
-    10$~GeV (totalizando 3518) são considerados alvo. Os restantes (365) são
+    tipo \emph{single muon} ou simplesmente \emph{sglmuon}). Eventos com $p_T >
+    10$~GeV (totalizando 3518) são estudados enquanto os restantes (365) são
     considerados falsos-alarmes.
 
-    \item A etapa de  \emph{offline }classifica múons através de três critérios
+    \item A etapa de  \emph{offline} classifica múons através de três critérios
     que variam de acordo com a acurácia desejada: \emph{tight}, \emph{medium} e
     \emph{loose}. O classificador projetado usou como alvo eventos aprovados
     pelo critério \emph{tight}. Eventos qualificados apenas no critério
@@ -138,7 +138,7 @@ $P_{\text{nc}}$ é a probabilidade de não obter um falso alarme.
 
 O SP é  o parâmetro para escolher o patamar de decisão ótimo para um
 classificador~\cite{ref:SIMAS}. Variando-se o patamar de decisão em toda sua
-faixa de excursão , calculam-se os valores do SP correspondentes. O SP máximo
+faixa de excursão, calculam-se os valores do SP correspondentes. O SP máximo
 indica um patamar que apresenta alta eficiência para as duas classes.
 
 \section{Metodologia}
@@ -146,7 +146,7 @@ indica um patamar que apresenta alta eficiência para as duas classes.
 Esta Seção apresenta a metodologia utilizada na tentativa de alcançar os
 objetivos traçados anteriormente. Três abordagens foram realizadas: estudo da
 deposição de energia de uma partícula passante na célula D do TileCal; utilizar
-a geometria do detector ATLAS como fator classificatório e; projeto de
+a geometria do detector ATLAS como fator classificatório; projeto de
 discriminadores neurais utilizando os parâmetros disponíveis no L1, confirmados
 pela reconstrução \emph{offline} de múons.
 
@@ -158,7 +158,7 @@ conjunto de falsos alarmes de cada um dos grupos descritos na
 Seção~\ref{sec:data-section}.
 
 Sabe-se que o ruído de fundo captado pelas células D possui média igual à 150
-MeV e que a relação sinal-ruído é relativamente baixa, o que dificulta de a
+MeV e que a relação sinal-ruído é relativamente baixa, o que dificulta a
 utilização de patamares de energia~\cite{CIODARO2009}. Porém, há a possibilidade
 de definir um patamar, acima do nível de ruído, capaz de aumentar a eficiência
 de detecção, sem comprometer a taxa de eventos estabelecida para o L1, ou seja,
@@ -175,10 +175,11 @@ identificar quais partículas possuem trajetórias mais oblíquas.
 
 O RPC é dividido logicamente em ROI, que são agrupadas em
 setores de trigger. A informação de cada um desses setores, por sua vez, é
-controlada por uma Sector Logic~(SL). Não há, porém, uma relação direta entra as
-células D do calorímetro e uma RoI, devido a diferença de granularidade. Por sua
-vez, um casamento entre o módulo do TileCal e o setor de trigger correspondente
-é viável. Deste modo, todas as células D do detector são mapeadas nos setores de
+controlada por uma Sector Logic~(SL). Não há, porém, uma relação direta entra
+as células D do calorímetro e uma RoI, devido a diferença de granularidade.
+Entretanto, um casamento entre o módulo do TileCal e o setor de trigger
+correspondente é viável. Deste modo, todas as células D do detector são
+mapeadas nos setores de
 \emph{trigger} do MS, de acordo com as suas posições $\phi$.
 
 Nesta abordagem só são considerados múons de interesse os que cruzam um setor de
@@ -236,7 +237,7 @@ p^1 = \sin(\phi)\\
 p^2 = \cos(\phi)
 \end{eqnarray}
 
-Deste modo, as variáveis $p^1_\text{D}$, $p^1_\text{RoIRPC}$,$p^2_\text{D}$,
+Deste modo, as variáveis $p^1_\text{D}$, $p^1_\text{RoIRPC}$, $p^2_\text{D}$,
 $p^2_\text{RoIRPC}$ passam a ser utilizadas no treinamento, validação e operação
 das redes neurais.
 
