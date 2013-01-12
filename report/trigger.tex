@@ -3,7 +3,7 @@
 \chapter{Sistema de Filtragem do ATLAS}
 
 O ATLAS apresenta três níveis de seleção de eventos: Primeiro Nível~(L1),
-Segundo Nível~(L2) e o \emph{Event Filter}~(EF). O L1 e o EF juntos são chamados
+Segundo Nível~(L2) e o \emph{Event Filter}~(EF). O L2 e o EF juntos são chamados
 de \emph{High Level Trigger} (HLT). O L1 é implantado utilizando placas
 eletrônicas especialmente projetadas para a tarefa, enquanto o HLT é quase 
 totalmente composto por dispositivos de rede e computadores disponíveis
@@ -51,7 +51,7 @@ Posteriormente, os dados são transmitidos através de uma comunicação
 ponto-a-ponto~\cite{ATLAS2008}.  Qualquer informação requerida pelo L2 é
 transmitida, geralmente relacionadas às RoIs. Os eventos que passarem por todos
 os critérios de seleção do L2 serão compilados (o chamado \emph{event-building})
-e passados pelo DAQ para o ES~\cite{ATLAS2008}. Finalmente, os eventos
+e passados pelo DAQ para o EF~\cite{ATLAS2008}. Finalmente, os eventos
 selecionados serão armazenados permanentemente~\cite{VAN2009}.
 
 Para controlar todo tráfego de dados durante a cadeia de seleção, o DAQ ainda
@@ -79,11 +79,12 @@ espectrômetro de múon.
     \label{fig:l1schema}
 \end{figure}
 
-O L1 de calorimetria (L1Calo) foca na identificação de objetos como elétrons,
-fótons, jatos e o $\tau$-léptons\footnote{O $\tau$-lépton, ou simplesmente tau, é
-uma partícula elementar similar ao elétron, com carga elétrica negativa e spin
-de $\frac{1}{2}$~\cite{ATLAS2011TAU}.} que decaiam em hádrons. Eventos com
-grande energia transversa também são almejados. 
+O L1 de calorimetria (L1Calo) tem como principal objetivo na identificação de
+partículas como elétrons, fótons, jatos e o $\tau$-léptons\footnote{O
+$\tau$-lépton, ou simplesmente tau, é uma partícula elementar similar ao
+elétron, com carga elétrica negativa e spin de
+$\frac{1}{2}$~\cite{ATLAS2011TAU}.} que decaiam em hádrons. Eventos com grande
+energia transversa também são almejados. 
 
 O L1 do sistema de múon baseia-se nos sinais das câmaras de trigger: RPCs na
 região do barril e TGC's no \emph{end-caps}. A seleção ocorre através de
@@ -95,7 +96,7 @@ um múon é contado em dois limiares diferentes~\cite{ATLAS2008}.
 
 
 As decisões tomadas pelo L1 são feitas no Processador de  Filtragem
-Central~(CTP, do inglés \emph{Central Trigger Processor}), que combina as
+Central~(CTP, do inglês \emph{Central Trigger Processor}), que combina as
 informações de todos os tipos de objetos.  Dependendo das características
 extraídas, o evento é classificado em até 256 itens separados. A
 Tabela~\ref{table:l1objects} apresenta um resumo dos objetos disponíveis para
@@ -145,15 +146,13 @@ de pacote. Já os sinais de calorimetria duram tipicamente quatro vezes mais que
 o \emph{bunch-crossing}~\cite{ATLAS2008}.
 
 Enquanto a decisão do \emph{trigger} é realizada, as informações de todos os
-canais do ATLAS estão armazenadas em memória. Essas memórias estão localizadas na
-eletrônica de \emph{front-end} e frequentemente está submetida a altos níveis de
-radiação, onde o acesso é muito difícil~\cite{ATLAS2008}. É desejável que o
-\emph{pipeline} de memória seja o menor possível.
-
-Desta maneira, a latência do \emph{trigger}, ou seja, o tempo entre a colisão e
-a decisão, tem que ser quase instantânea. O projeto da eletrônica de
-\emph{front-end} requer que essa latência seja de no máximo 2,5~$\mu$s. Cerca de
-1~$\mu$s desse tempo é deixado para propagação dos dados no cabeamento.
+canais do ATLAS estão armazenadas em memória. Essas memórias estão localizadas
+na eletrônica de \emph{front-end} e frequentemente está submetida a altos
+níveis de radiação, onde o acesso é muito difícil~\cite{ATLAS2008}. É desejável
+que o \emph{pipeline} de memória seja o menor possível. O projeto da eletrônica
+de \emph{front-end} requer que essa latência seja de no máximo 2,5~$\mu$s.
+Cerca de 1~$\mu$s desse tempo é deixado para propagação dos dados no
+cabeamento.
 
 \subsection*{Primeiro Nível de Filtragem da Calorimetria}
 
@@ -226,7 +225,7 @@ Input}) para que o mesmo solicite aos ROS toda a informação disponível do
 evento em questão. Uma vez a informação disponível, o SFI seleciona um dos
 processadores do filtro de eventos (\emph{EF Processor - EFP}), para que o
 mesmo realize análises detalhadas, usando toda a informação disponível para
-cada evento, e gerando, assim, a decisão final do sistema de filtragem. Os
+cada evento, gerando, assim, a decisão final do sistema de filtragem. Os
 eventos finalmente aprovados são enviados aos processadores SFO (\emph{Sub-Farm
 Output}) para que possam ser armazenados em mídia permanente, permitindo
 posterior análise \emph{offline}~\cite{RIU2008}.
@@ -255,7 +254,8 @@ aconteceram no detector.
 
 O primeiro nível de filtragem para múons, conhecido como \emph{L1Muon}, busca
 pela combinação de cruzamentos entre partículas e as diferentes câmaras do
-espectrômetro, afim de identificar múons em 6 patamares de momento~($p_T$) distintos.
+espectrômetro, afim de identificar múons em 6 patamares de momento
+transverso~($p_T$) distintos.
 
 Ao detectar o cruzamento de um múon na primeira estação, o sistema projeta
 janelas de visualização nas outras camadas. Estas janelas foram pré-calculadas
@@ -294,8 +294,8 @@ seleção~\cite{BUTTINGER2012}:
     \item[MU10] Seleciona múons com $p_T$ acima de aproximadamente 10~GeV. Possui
     as mesmas regras de coincidência do MU6, porém projeta janelas menores.
     \item[MU11] Seleciona múons com $p_T$ acima de aproximadamente 11~GeV. Exige
-    três coincidências em todas as regiões (RPC ou TGC) do sistema. Assim, não
-    existe uma resolução de energia entre os patamares MU11 e MU10.
+    três coincidências em todas as regiões (RPC ou TGC) do sistema. Não existe
+    resolução suficiente de energia para diferenciar os patamares MU11 e MU10.
     \item[MU15] Seleciona múons com $p_T$ acima de aproximadamente 15~GeV. Exige
     a passagem do múon nas três estações.
     \item[MU20] Seleciona múons com $p_T$ acima de aproximadamente 20~GeV. Possui
@@ -303,7 +303,7 @@ seleção~\cite{BUTTINGER2012}:
 \end{description}
 
 Algumas regiões do detector não são cobertas pelo RPC devido a questões
-mecânicas~\cite{MUONTDR1997}. Nessas regiões, o múon não pode ser classificado
+geométricas~\cite{MUONTDR1997}. Nessas regiões, o múon não pode ser classificado
 como MU11, MU15 ou MU20, mesmo que o valor de $p_T$ o qualifique para tal
 patamar. Adicionalmente, cerca de 1\% das placas RPC pararam de funcionar devido
 à problemas no sistema de alimentação~\cite{ATLAS-CONF-2012-099}, aumentando
@@ -350,7 +350,7 @@ partícula~\cite{DIMATTIA2011}.
 O algoritmo \emph{muComb} combina as informações provenientes do ID com a
 trajetória do múon dentro do MS~\cite{VENTURA2010}. Desta maneira, é possível
 extrapolar as trajetórias reconstruídas pelo ID até o MS e rejeitar múons
-provinientes de decaimentos de píons e káons, assim como falso alarmes e
+provenientes de decaimentos de píons e káons, assim como falsos alarmes e
 raios-cósmicos~\cite{COSMICRAY2010}.
 
 
@@ -375,7 +375,7 @@ Dois algoritmos fazem parte do filtro de eventos de múons: o \emph{TrigMuonEF} 
 o \emph{TrigMuGirl}. Ambos são baseados nas ferramentas \emph{offline} de
 reconstrução de múons~\cite{ARMSTRONG2004}.
 Os algoritmos para deteção de múons do filtro de eventos seguem as mesmas
-estratégias dos algoritmos do L2, contudo por possuir maior tempo de
-latência,4~s contra 40~ms do L2, pode acessar mais informações e obter
-resultados mais apurados. Assim, a principal tarefas deles é confirmar, ou não,
-os candidatos de múons validados pelo L2~\cite{VENTURA2010}.
+estratégias dos algoritmos do L2, contudo por possuir maior tempo de latência,
+4~s contra 40~ms do L2, pode acessar mais informações e obter resultados mais
+apurados. Assim, a principal tarefas deles é confirmar os candidatos de múons
+validados pelo L2~\cite{VENTURA2010}.
