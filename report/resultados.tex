@@ -48,7 +48,7 @@ Algumas considerações são importantes sobre a natureza dos dados utilizados:
 A Figura~\ref{fig:muonrates} mostra um gráfico relacionando a eficiência de
 classificação do \emph{L1Muon} ao momento transverso do múon. O valor de $p_T$
 calculado de maneira \emph{offline} (eixo $x$) é usado para validar a escolha
-do sistema \emph{online}. O cálculo realizado pelos algoritmos \emph(offline)
+do sistema \emph{online}. O cálculo realizado pelos algoritmos \emph{offline}
 utiliza informações do sistema MDT, como foi explicado no Capítulo~3.
 
 \begin{figure}[ht!]
@@ -96,7 +96,7 @@ distintos com bases próprias:
 \end{enumerate}
 
 A Tabela~\ref{table:Classes} resume o número de eventos e a configuração
-utilizada
+utilizada.
 
 \begin{table}[htbp!]
   \centering
@@ -133,7 +133,7 @@ SP = \sqrt{\sqrt{P_{\text{c}}P_{\text{nc}}} \left(\frac{P_{\text{c}} +
 P_{\text{nc}}}{2}\right)}
 \end{equation}
 
-onde $P_\text{c}$ é a probabilidade de detecção da classe desejada e
+\noindent onde $P_\text{c}$ é a probabilidade de detecção da classe desejada e
 $P_{\text{nc}}$ é a probabilidade de não obter um falso alarme.
 
 O SP é  o parâmetro para escolher o patamar de decisão ótimo para um
@@ -257,7 +257,7 @@ validação.
 Para decidir a quantidade de neurônios presentes na camada oculta, optou-se por
 realizar uma série de treinos para 30 arquiteturas diferentes. Cada neurônio,
 em todas as arquiteturas utilizadas, empregou a tangente hiperbólica como
-função de ativação. A topologia que apresentar o maior valor médio para o índice
+função de ativação. A topologia que apresenta o maior valor médio para o índice
 SP, considerando todas as rodadas utilizadas, foi considerada a melhor rede.
 
 \subsubsection{Treinamento}
@@ -316,7 +316,7 @@ Aqui, a validação foi realizada respeitando as seguintes etapas.
     \item Sete blocos são separados para o conjunto, dois blocos para validação
     e um para teste.
     \item O discriminador neural é treinado.
-    \item Os resultados obtidos são armazenados
+    \item Os resultados obtidos são armazenados.
     \item Os últimos três passos são então repetidos nove vezes variando a
     seleção de blocos, e nunca repetindo aquele já selecionado para o conjunto
     de teste em um treinamento anterior para a mesma função.
