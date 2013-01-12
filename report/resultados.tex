@@ -3,14 +3,14 @@
 Este capítulo descreve a elaboração de um modelo capaz de discriminar partículas
 de múons com momento transverso elevado. O intuito é recuperar aquelas que
 foram erroneamente classificadas no primeiro nível de filtragem como de baixa
-energia por falharem ao cruzar as três camadas do RPC. 
+energia, por falharem o cruzamento das três camadas do RPC.
 
 A Seção~\ref{sec:data-section} apresenta os conjuntos de dados formados para a
-realização das análises. Aa Seção~\ref{sec:performance_indexes} mostra os
-índices de desempenho utilizados para avaliar os resultados obtidos. A seção
-seguinte apresenta a metodologia utilizada.
+realização das análises, enquanto que a  Seção~\ref{sec:performance_indexes}
+mostra os índices de desempenho utilizados para avaliar os resultados obtidos.
+A Seção~4.3 apresenta a metodologia utilizada.
 
-\section{Apresentação das Bases de Dados}
+\section{Bases de Dados}
 \label{sec:data-section}
 
 Os dados utilizados para realização das análises deste trabalho foram obtidos em
@@ -24,7 +24,7 @@ foi levada em consideração. Como explicado anteriormente, estas informações
 estão presentes no L1, porém, sem grande acurácia.  Contudo, na elaboração dos
 modelos apresentados no decorrer desse capítulo, foram utilizados os valores
 calculados na etapa \emph{offline} da reconstrução de eventos. Desta maneira,
-garante-se a precisão dos dados utilizados.
+garante-se a acurácia nos dados utilizados.
 
 Algumas considerações são importantes sobre a natureza dos dados utilizados:
 
@@ -35,12 +35,12 @@ Algumas considerações são importantes sobre a natureza dos dados utilizados:
     \emph{trigger} de múon.  Deste modo, apenas as células D0, D1, D2 e D3 foram
     utilizadas nesta pesquisa (ver Figura 2.10).
 
-    \item Ao longo deste trabalho de pesquisa foi utilizado o casamento entre a
+    \item Ao longo deste trabalho de pesquisa, foi utilizado o casamento entre a
     geometria do TileCal e do RPC. Contudo, devido à diferença de granularidade
-    entre as células D e as RoI do RPC, e também a curvatura em $\eta$ na
+    entre as células D e as RoI do RPC, e também à curvatura em $\eta$ na
     trajetória do múon, o mapeamento entre célula D e RoI torna-se complexo. Uma
     simplificação possível é mapear cada célula D em um setor de \emph{trigger}
-    do RPC. Esse mapeamento é robusto à variação de pseudo-rapidez, já que
+    do RPC. Esse mapeamento é independente à variação de pseudo-rapidez, já que
     somente a posição da célula em $\phi$ é levado em consideração.
 
 \end{itemize}
@@ -48,8 +48,8 @@ Algumas considerações são importantes sobre a natureza dos dados utilizados:
 A Figura~\ref{fig:muonrates} mostra um gráfico relacionando a eficiência de
 classificação do \emph{L1Muon} ao momento transverso do múon. O valor de $p_T$
 calculado de maneira \emph{offline} (eixo $x$) é usado para validar a escolha
-do sistema \emph{online}. O cálculo realizado pelos algoritmos \emph(offlines)
-utiliza informações do sistema MDT, como foi explicado em capítulos anteriores.
+do sistema \emph{online}. O cálculo realizado pelos algoritmos \emph(offline)
+utiliza informações do sistema MDT, como foi explicado no Capítulo~3.
 
 \begin{figure}[ht!]
     \centering
@@ -86,10 +86,10 @@ distintos com bases próprias:
     \emph{loose}. O classificador projetado usou como alvo eventos aprovados
     pelo critério \emph{tight}. Eventos qualificados apenas no critério
     \emph{loose} foram considerados falsos-alarmes.  Neste projeto, foram
-    utilizados dados de todos os \emph{2011} que foram configurados como
-    \emph{minbias}. Nesta configuração, múons não são o principal objetivos,
-    sendo assim, ruído de fundo do experimento. Usou-se essa configuração com
-    intuito de isolar os efeitos do L1 em  relação ao classificador. Foram 2252
+    utilizados dados de todos o ano de \emph{2011} que foram configurados como
+    \emph{minbias}. Nesta configuração, múons não são o principal objetivo,
+    sendo, assim, ruído de fundo do experimento. Usou-se essa configuração com
+    intuito de isolar os efeitos do L1 em  relação ao classificador. Foram 2.252
     eventos alvo contra
     430 indesejados.
 
@@ -104,8 +104,8 @@ utilizada
       \toprule
                          & Classe & Não-Classe & Configuração\\
       \midrule
-        1 & 3518  & 365 & \emph{sglmuon} \\
-        2 & 2252 & 430 &  \emph{minbias} \\ 
+        1 & 3.518  & 365 & \emph{sglmuon} \\
+        2 & 2.252 & 430 &  \emph{minbias} \\ 
       \bottomrule
   \end{tabular}
   \caption{Resumo dos eventos MU10 considerados.}
@@ -143,7 +143,7 @@ indica um patamar que apresenta alta eficiência para as duas classes.
 
 \section{Metodologia}
 
-Esta Seção apresenta a metodologia utilizada na tentativa de alcançar os
+Esta seção apresenta a metodologia utilizada na tentativa de alcançar os
 objetivos traçados anteriormente. Três abordagens foram realizadas: estudo da
 deposição de energia de uma partícula passante na célula D do TileCal; utilizar
 a geometria do detector ATLAS como fator classificatório; projeto de
@@ -180,10 +180,11 @@ as células D do calorímetro e uma RoI, devido a diferença de granularidade.
 Entretanto, um casamento entre o módulo do TileCal e o setor de trigger
 correspondente é viável. Deste modo, todas as células D do detector são
 mapeadas nos setores de
-\emph{trigger} do MS, de acordo com as suas posições $\phi$.
+\emph{trigger} do MS, de acordo com as suas posições em $\phi$.
 
-Nesta abordagem só são considerados múons de interesse os que cruzam um setor de
-\emph{trigger}, quando combinadas com as informações geométricas da célula D.
+Nesta abordagem só são considerados como múons de interesse aqueles que cruzam
+um setor de \emph{trigger}, quando combinadas com as informações geométricas da
+célula D.
 
 
 
@@ -192,13 +193,13 @@ Nesta abordagem só são considerados múons de interesse os que cruzam um setor
 As redes neurais artificiais~(RNA)~\cite{WASSERMAN1989,HAYKIN2008} são modelos
 matemáticos inspirados em algumas características do cérebro humano, sendo
 capazes de adquirir conhecimento e generalizar. Devido ao poder computacional,
-obtido de sua estrutura paralelamente distribuído e suas habilidades, as RNAs
+obtido de sua estrutura paralelamente distribuída e suas habilidades, as RNA
 são usadas em diversas aplicações: reconhecimento de padrões~\cite{BISHOP1995},
 controle e identificação de sistemas~\cite{ICHIKAWA1992}, processamento de
 sinais~\cite{LAPEDES1987}, aproximação de funções~\cite{DENG2011}.
 
 Uma diferença fundamental entre os classificadores neurais e os métodos
-clássicos é que nestes últimos é necessário formular um modelo matemático a
+clássicos é que, nestes últimos, é necessário formular um modelo matemático a
 partir dos sinais. Na abordagem neural, o classificador trabalha diretamente no
 conjunto de dados, ficando o modelo matemático implícito nos valores dos pesos
 sinápticos obtidos após o treinamento~\cite{ref:SIMAS}.
@@ -211,7 +212,7 @@ trabalho foram utilizados sete neurônios na entrada e apenas um na saída. A
 quantidade de neurônios da camada intermediária foi determinada mediante estudo
 apresentado nas seções seguintes. A saída da rede foi projetada para resultar
 $-1$ para eventos não desejados e $1$ para detecção. A Figura~\ref{fig:nnArch}
-apresenta o modelo genérico de redes utilizados neste trabalho.
+apresenta o modelo genérico de redes utilizada neste trabalho.
 
 \begin{figure}[htbp!]
     \centering
@@ -300,7 +301,7 @@ parâmetro de treinamento.
 \subsubsection{Análise da Flutuação Estatística}
 
 Para que a flutuação estatística inerente aos dados empregados possa ser levada
-em consideração na composição dos resultados, todos os discriminadores
+em consideração na comparação dos resultados, todos os discriminadores
 desenvolvidos foram analisados através da validação cruzada~\cite{HAYKIN2008}.
 Aqui, a validação foi realizada respeitando as seguintes etapas.
 
