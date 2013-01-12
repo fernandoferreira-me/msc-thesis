@@ -334,7 +334,7 @@ Neste capítulo, são apresentados os resultados obtidos ao aplicar a metodologi
 indicada no capítulo anterior. Os dados utilizados foram obtidos em colisões
 observadas no ATLAS, em 2011, cuja energia total foi igual a 7~GeV.
 
-Foram utilizadas as informações relativas a geometria da célula D do TileCal
+Foram utilizadas as informações relativas à geometria da célula D do TileCal
 ($\phi$ e $\eta$) e do MS ($\phi$ e $\eta$) para um evento de múon.  A energia
 ($E_\text{D}$) depositada pela passagem da partícula na célula do calorímetro também
 foi levada em consideração.
@@ -354,12 +354,12 @@ Existe uma região de confusão entre múons de alto e de baixo momento
 transverso, em torno de 10~GeV. Essa característica faz com que uma parte dos
 múons de alto momento transverso sejam sempre identificados pelo patamar MU10,
 sensível aos múons de baixo $p_T$. Assim, esse patamar opera com um elevado
-prescale, o que diminui a quantidade de múons de alto momento transverso
+\emph{prescale}, o que diminui a quantidade de múons de alto momento transverso
 observados.
 
 Nesta etapa, procurou-se verificar se a célula D serviria como substituta da
 camada do RPC faltante. Uma terceira etapa de coincidência deixa a aquisição
-menos sensível a múons de baixo $p_T$, aumentando a a probabilidade de detectar
+menos sensível a múons de baixo $p_T$, aumentando  a probabilidade de detectar
 múons de alta energia corretamente.
 
 
@@ -387,8 +387,8 @@ distância das duas distribuições em relação ao ruído eletrônico (ou
 Como pode-se observar na Figura~\ref{fig:ROCEnergy191715}, a eficiência de
 detecção para as duas classes é muito semelhante. A curvatura da curva ROC é
 muito sutil. O ponto de SP máximo dá-se quando o patamar de corte é igual a
-500~MeV, onde a taxa detecção chega a aproximadamente 60\% e o falso-alarme
-fica acima de 50\%.
+500~MeV, onde a taxa de detecção chega a aproximadamente 60\% e a de
+falso-alarme fica acima de 50\%.
 
 Percebe-se assim que um corte por patamar de energia sozinho não é suficiente
 para distinguir a classe alvo.
@@ -416,10 +416,10 @@ A Figura~\ref{crossgeo} procura mostrar o quão oblíquo é a trajetória dos m�
 que cruzaram o TileCal e o RPC durante o \emph{run} escolhido. No eixo $x$,
 encontramos a diferença em $\eta$ entre os pontos de cruzamentos na célula D e
 no RoI do RPC. A escala de cor representa a quantidade de eventos que obtiveram
-a mesma inclinação. O histograma superior apresenta os eventos com baixo $p_T$ e
-o inferior com alto $p_T$. Pode-se notar que a distribuição do primeiro é mais
-dispersa, principalmente em $\phi$. Este comportamento deve-se ao fato de múons
-menos energéticos tendem a ser desviados de modo mais acentuado.
+a mesma inclinação. O histograma superior apresenta os eventos com baixo $p_T$
+e o inferior com alto $p_T$. Pode-se notar que a distribuição do primeiro é
+mais dispersa, principalmente em $\phi$. Este comportamento deve-se ao fato de
+que múons menos energéticos tendem a ser desviados de modo mais acentuado.
 
 \begin{figure}[htpb!]
     \centering
@@ -430,7 +430,7 @@ menos energéticos tendem a ser desviados de modo mais acentuado.
     \label{crossgeo}
 \end{figure}
 
-É estabelecer um novo patamar de corte ao rejeitar todas as partículas que
+Deve-se estabelecer um novo patamar de corte ao rejeitar todas as partículas que
 atravessem  setores de \emph{trigger} distintos. Para tal, as células D do
 detector são mapeadas, de acordo com as suas posições $\phi$, em relação aos
 setores do espectrômetro.
@@ -483,7 +483,7 @@ dos \emph{clusters} formados evidenciou uma das classes.
     \label{fig:clusters191715}
 \end{figure}
 
-Os dados dos \emph{clusters} foram igualmente distribuídos entre 10 os blocos.
+Os dados dos \emph{clusters} foram igualmente distribuídos entre os 10 blocos.
 Desta maneira, espera-se que cada bloco possua características estatísticas
 similares entre si.  As Figuras~\ref{fig:bloco191715-1}, \ref{fig:bloco191715-2} e
 \ref{fig:bloco191715-3} mostram os dados distribuídos nos blocos. Neste ponto,
@@ -505,7 +505,7 @@ de forma que a representatividade das duas classes seja parelha.
     \includegraphics[width=\textheight]{images/sglmuon/cluster_eta_phi_class.png}
     \caption{Eventos de múons divididos em 10 blocos. \emph{Hits} na camada D do
     TileCal e nas regiões de interesse do RPC. Aqui estão representados os
-    eventos de alto $p_T$}
+    eventos de alto $p_T$.}
     \label{fig:bloco191715-2}
 \end{sidewaysfigure}
 
@@ -514,14 +514,14 @@ de forma que a representatividade das duas classes seja parelha.
     \includegraphics[width=\textheight]{images/sglmuon/cluster_eta_phi_noclass.png}
     \caption{Eventos de múons divididos em 10 blocos. \emph{Hits} na camada D do
     TileCal e nas regiões de interesse do RPC. Aqui estão representados os
-    eventos de baixo $p_T$}
+    eventos de baixo $p_T$.}
     \label{fig:bloco191715-3}
 \end{sidewaysfigure}
 
 Ao todo, 31 topologias foram treinadas. Por sua vez, cada uma foi treinada com
 10 arranjos diferentes de treino, teste e validação. Cada rede foi inicializada
-20 vezes com intuito de evitar mínimos locais e a que tiver melhor índice de SP
-para o conjunto de validação será armazenada. No total, foram realizadas 6.200
+20 vezes com intuito de evitar mínimos locais e a que apresentou melhor índice de SP
+para o conjunto de validação foi armazenada. No total, foram realizadas 6.200
 rodadas de treino para selecionar a topologia ideal. 
 
 A Figura~\ref{fig:Topology191715} mostra o índice de SP médio para cada
@@ -723,7 +723,7 @@ que a representatividade das duas classes seja parelha.
 Ao todo, 30 topologias foram treinadas. Por sua vez, cada uma foi treinada com
 10 arranjos diferentes de treino, teste e validação. Cada rede foi inicializada
 20 vezes com intuito de evitar mínimos locais e a que tiver melhor índice de SP
-para o conjunto de validação será armazenada. No total, foram realizadas 6.000
+para o conjunto de validação foi armazenada. No total, foram realizadas 6.000
 rodadas de treino para selecionar a topologia ideal.
 
 A Figura~\ref{fig:Topologyminbias} mostra o índice de SP médio para cada
@@ -736,7 +736,7 @@ A Figura~\ref{fig:ROCNNminbias} apresenta a  curva ROC para a rede com 29
 neurônios na camada intermediária que obteve maior valor SP para o conjunto de
 validação de dados. Neste caso, observou-se um grande aumento de performance. A
 taxa de detecção aumenta cerca de 20\% em relação aos outros métodos utilizados
-e o falso-alarme é reduzido em 40\%.
+e o falso-alarme foi reduzido em 40\%.
 
 \begin{figure}[htpb!]
     \centering
